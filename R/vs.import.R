@@ -6,7 +6,7 @@
 #'
 #' @param file is the file that contains.
 #' @return The output of the vs.import() function is a data.frame
-#' @author Stefan Roediger
+#' @author Stefan Roediger, Michal Burdukiewicz 
 #' @keywords import data
 #' @examples
 #'
@@ -95,14 +95,14 @@ vs.import <- function(file) {
   # Give all columns English names
   colnames(res.data) <- c(
     "ID",
-    "name",
-    "forename",
-    "birthday",
-    "sex",
-    "target.names",
-    "mean", "events", "standard deviation",
-    "profile.name",
-    "project.name",
+    "Name",
+    "Forename",
+    "Birthday",
+    "Sex",
+    "Biomarker",
+    "Value", "Standard deviation", "Events",
+    "Profile",
+    "Project",
     "LOT",
     "md5sum"
   )

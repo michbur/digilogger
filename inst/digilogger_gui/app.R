@@ -19,13 +19,15 @@ ui <- fluidPage(
      ),
      mainPanel(
        shiny::tabsetPanel(
-         shiny::tabPanel("Data",
-                         tableOutput('filetable')),
+         shiny::tabPanel("Raw Data",
+                         dataTableOutput('filetable')),
         shiny::tabPanel("summary",
                          tableOutput('summary')),
         shiny::tabPanel("Plot",
-                         plotOutput('mplot'))
-       )
+                         plotOutput('mplot')),
+       shiny::tabPanel("Session information",
+                       textOutput('sessioninformation'))
+     )
      )
    )
 )
@@ -44,7 +46,7 @@ server <- function(input, output) {
   })
   
   # Generate a table of the dataset
-  output$filetable <- renderTable({
+  output$filetable <- renderDataTable({
     filedata()
   })
   
@@ -54,6 +56,10 @@ server <- function(input, output) {
   
   output$mplot <- renderPlot({
     mplot()
+  })
+  
+  output$sessioninformation <- renderPrint({
+    sessionInfo()
   })
 }
 
