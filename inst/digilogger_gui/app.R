@@ -21,13 +21,16 @@ ui <- fluidPage(
      mainPanel(
        shiny::tabsetPanel(
          shiny::tabPanel("Raw Data",
-                         dataTableOutput('filetable')),
+                         dataTableOutput('filetable'),
+                         includeMarkdown("raw_data_readme.md")),
         shiny::tabPanel("summary",
                          tableOutput('summary')),
         shiny::tabPanel("Plot",
                          plotOutput('mplot')),
        shiny::tabPanel("Session information",
-                       textOutput('sessioninformation'))
+                       textOutput('sessioninformation')),
+       shiny::tabPanel("About",
+                       includeMarkdown("about.md"))
      )
      )
    )

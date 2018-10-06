@@ -1,5 +1,5 @@
 ### About
-  
+
 The **digilogger** app automatically reads and processes measured values from POCT devices. The raw data are not changed but are entered into a database uniquely identifiable with IDs and hashes.
 
 Currently, only measurements from the VideoScan platform are supported.
