@@ -15,7 +15,8 @@ ui <- fluidPage(
      headerPanel("Data"),
      sidebarPanel(
        fileInput('datafile', 'Choose CSV File',
-                 accept=c('text/csv', 'text/comma-separated-values,text/plain', '.csv')),
+                 accept=c('text/csv', 'text/comma-separated-values,text/plain', '.csv'),
+                 multiple = TRUE),
         includeMarkdown("readme.md")
      ),
      mainPanel(
@@ -45,7 +46,7 @@ server <- function(input, output) {
       # User has not uploaded a file yet
       NULL
     } else {
-      vs.import(inFile$datapath)
+      do.call(rbind, lapply(input$datafile$datapath, vs.import))
     }
   })
   
