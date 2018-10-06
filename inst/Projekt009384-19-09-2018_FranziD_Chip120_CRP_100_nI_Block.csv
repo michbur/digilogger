@@ -1,48 +1,47 @@
-"Projektname";"Projekt009384-19-09-2018_FranziD_Chip120_CRP_100_nI"
-"Profil name";"FDinter_4x_C0424-C0435_FlexFlowChip_2erEinlegerahmen"
-
-"LOT";""
-
-"blockweise Ausgabe:"
-"1. Block";"Ergebnisse"
-"2. Block";"Mittelwerte"
-"3. Block";"Ereignisanzahlen"
-"4. Block";"Standardabweichungen"
-"5. Block";"CV-Werte"
-"6. Block";"Well-Informationen und Ergebnisnamen"
-
-"Ergebnisse"
-"ZeilenIndex";"SpaltenIndex";"Well";"ID";"Name";"Ergebnis 1";"Ergebnis 2";"Ergebnis 3";"Ergebnis 4";"Ergebnis 5";"Ergebnis 6";"Ergebnis 7";"Ergebnis 8";"Ergebnis 9";"Ergebnis 10";"Ergebnis 11";"Ergebnis 12";"Ergebnis 13";"Ergebnis 14";"Ergebnis 15"
-"0";"0";"Slide1_A1";"";"";"unzureichende Beadanzahl";0,02565826;0,02549584;"unzureichende Beadanzahl";"unzureichende Beadanzahl";"unzureichende Beadanzahl";2,78325459;0,64178779;0,10112553;"unzureichende Beadanzahl";"unzureichende Beadanzahl";"unzureichende Beadanzahl";3222;".\Projekt009384-19-09-2018_FranziD_Chip120_CRP_100_nI_Results\Well_Slide1_A1_Result.csv";".\Projekt009384-19-09-2018_FranziD_Chip120_CRP_100_nI_Results\Well_Slide1_A1_Raw.csv"
-"1";"0";"Slide2_A1";"";""
-
-
-"Mittelwerte"
-"ZeilenIndex";"SpaltenIndex";"Well";"ID";"Name";"Mittelwert 1";"Mittelwert 2";"Mittelwert 3";"Mittelwert 4";"Mittelwert 5";"Mittelwert 6";"Mittelwert 7";"Mittelwert 8";"Mittelwert 9";"Mittelwert 10";"Mittelwert 11";"Mittelwert 12";"Mittelwert 13";"Mittelwert 14";"Mittelwert 15"
-"0";"0";"Slide1_A1";"";"";;0,02565826;0,02549584;;;;2,78325459;0,64178779;0,10112553;;;;;;
-"1";"0";"Slide2_A1";"";""
-
-
-"Ereignisanzahlen"
-"ZeilenIndex";"SpaltenIndex";"Well";"ID";"Name";"Ereignisanzahl 1";"Ereignisanzahl 2";"Ereignisanzahl 3";"Ereignisanzahl 4";"Ereignisanzahl 5";"Ereignisanzahl 6";"Ereignisanzahl 7";"Ereignisanzahl 8";"Ereignisanzahl 9";"Ereignisanzahl 10";"Ereignisanzahl 11";"Ereignisanzahl 12";"Ereignisanzahl 13";"Ereignisanzahl 14";"Ereignisanzahl 15"
-"0";"0";"Slide1_A1";"";"";0;930;831;0;0;0;478;112;177;0;0;0;0;0;0
-"1";"0";"Slide2_A1";"";""
-
-
-"Standardabweichungen"
-"ZeilenIndex";"SpaltenIndex";"Well";"ID";"Name";"Standardabweichung 1";"Standardabweichung 2";"Standardabweichung 3";"Standardabweichung 4";"Standardabweichung 5";"Standardabweichung 6";"Standardabweichung 7";"Standardabweichung 8";"Standardabweichung 9";"Standardabweichung 10";"Standardabweichung 11";"Standardabweichung 12";"Standardabweichung 13";"Standardabweichung 14";"Standardabweichung 15"
-"0";"0";"Slide1_A1";"";"";0;0,0125821;0,0145987;0;0;0;0,47622252;0,15382591;0,03633865;0;0;0;0;0;0
-"1";"0";"Slide2_A1";"";""
-
-
-"CV-Werte"
-"ZeilenIndex";"SpaltenIndex";"Well";"ID";"Name";"CV-Wert 1";"CV-Wert 2";"CV-Wert 3";"CV-Wert 4";"CV-Wert 5";"CV-Wert 6";"CV-Wert 7";"CV-Wert 8";"CV-Wert 9";"CV-Wert 10";"CV-Wert 11";"CV-Wert 12";"CV-Wert 13";"CV-Wert 14";"CV-Wert 15"
-"0";"0";"Slide1_A1";"";"";;49,03723412;57,25912619;;;;17,11027516;23,96834521;35,9342024;;;;;;
-"1";"0";"Slide2_A1";"";""
-
-
-"Wellinformationen"
-"ZeilenIndex";"SpaltenIndex";"Well";"ID";"Name";"Vorname";"Geburtstag";"Geschlecht";"ModulName";"ModulKonfiguration";"Einzelergebnisanzahl";"Ergebnisname 1";"Ergebnisname 2";"Ergebnisname 3";"Ergebnisname 4";"Ergebnisname 5";"Ergebnisname 6";"Ergebnisname 7";"Ergebnisname 8";"Ergebnisname 9";"Ergebnisname 10";"Ergebnisname 11";"Ergebnisname 12";"Ergebnisname 13";"Ergebnisname 14";"Ergebnisname 15"
-"0";"0";"Slide1_A1";"";"";"";"";"";"WideRangeDRLDBeadMeasurementTestDll.dll";"FDinter_4x_C0424-C0435_FlexFlowChip.ffstc";"15";Wert von C0424;Wert von C0425;Wert von C0426;Wert von C0427;Wert von C0428;Wert von C0429;Wert von C0430;Wert von C0431;Wert von C0432;Wert von C0433;Wert von C0434;Wert von C0435;Beadanzahl;Ergebnisdatei;Rohdatendatei
-"1";"0";"Slide2_A1";"";"";"";"";"";"WideRangeDRLDBeadMeasurementTestDll.dll";"FDinter_4x_C0424-C0435_FlexFlowChip.ffstc";"0"
-
+Projektname;Projekt009384-19-09-2018_FranziD_Chip120_CRP_100_nI;;;;;;;;;;;;;;;;;;;;;;;;
+Profil name;FDinter_4x_C0424-C0435_FlexFlowChip_2erEinlegerahmen;;;;;;;;;;;;;;;;;;;;;;;;
+;2018-09-10;08:00:00 AM;;;;;;;;;;;;;;;;;;;;;;;
+LOT;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+blockweise Ausgabe:;;;;;;;;;;;;;;;;;;;;;;;;;
+1. Block;Ergebnisse;;;;;;;;;;;;;;;;;;;;;;;;
+2. Block;Mittelwerte;;;;;;;;;;;;;;;;;;;;;;;;
+3. Block;Ereignisanzahlen;;;;;;;;;;;;;;;;;;;;;;;;
+4. Block;Standardabweichungen;;;;;;;;;;;;;;;;;;;;;;;;
+5. Block;CV-Werte;;;;;;;;;;;;;;;;;;;;;;;;
+6. Block;Well-Informationen und Ergebnisnamen;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+Ergebnisse;;;;;;;;;;;;;;;;;;;;;;;;;
+ZeilenIndex;SpaltenIndex;Well;ID;Name;Ergebnis 1;Ergebnis 2;Ergebnis 3;Ergebnis 4;Ergebnis 5;Ergebnis 6;Ergebnis 7;Ergebnis 8;Ergebnis 9;Ergebnis 10;Ergebnis 11;Ergebnis 12;Ergebnis 13;Ergebnis 14;Ergebnis 15;;;;;;
+0;0;Slide1_A1;;;unzureichende Beadanzahl;0,02565826;0,02549584;unzureichende Beadanzahl;unzureichende Beadanzahl;unzureichende Beadanzahl;2,78325459;0,64178779;0,10112553;unzureichende Beadanzahl;unzureichende Beadanzahl;unzureichende Beadanzahl;3222;.\Projekt009384-19-09-2018_FranziD_Chip120_CRP_100_nI_Results\Well_Slide1_A1_Result.csv;.\Projekt009384-19-09-2018_FranziD_Chip120_CRP_100_nI_Results\Well_Slide1_A1_Raw.csv;;;;;;
+1;0;Slide2_A1;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+Mittelwerte;;;;;;;;;;;;;;;;;;;;;;;;;
+ZeilenIndex;SpaltenIndex;Well;ID;Name;Mittelwert 1;Mittelwert 2;Mittelwert 3;Mittelwert 4;Mittelwert 5;Mittelwert 6;Mittelwert 7;Mittelwert 8;Mittelwert 9;Mittelwert 10;Mittelwert 11;Mittelwert 12;Mittelwert 13;Mittelwert 14;Mittelwert 15;;;;;;
+0;0;Slide1_A1;;;;0,02565826;0,02549584;;;;2,78325459;0,64178779;0,10112553;;;;;;;;;;;;
+1;0;Slide2_A1;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+Ereignisanzahlen;;;;;;;;;;;;;;;;;;;;;;;;;
+ZeilenIndex;SpaltenIndex;Well;ID;Name;Ereignisanzahl 1;Ereignisanzahl 2;Ereignisanzahl 3;Ereignisanzahl 4;Ereignisanzahl 5;Ereignisanzahl 6;Ereignisanzahl 7;Ereignisanzahl 8;Ereignisanzahl 9;Ereignisanzahl 10;Ereignisanzahl 11;Ereignisanzahl 12;Ereignisanzahl 13;Ereignisanzahl 14;Ereignisanzahl 15;;;;;;
+0;0;Slide1_A1;;;0;930;831;0;0;0;478;112;177;0;0;0;0;0;0;;;;;;
+1;0;Slide2_A1;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+Standardabweichungen;;;;;;;;;;;;;;;;;;;;;;;;;
+ZeilenIndex;SpaltenIndex;Well;ID;Name;Standardabweichung 1;Standardabweichung 2;Standardabweichung 3;Standardabweichung 4;Standardabweichung 5;Standardabweichung 6;Standardabweichung 7;Standardabweichung 8;Standardabweichung 9;Standardabweichung 10;Standardabweichung 11;Standardabweichung 12;Standardabweichung 13;Standardabweichung 14;Standardabweichung 15;;;;;;
+0;0;Slide1_A1;;;0;0,0125821;0,0145987;0;0;0;0,47622252;0,15382591;0,03633865;0;0;0;0;0;0;;;;;;
+1;0;Slide2_A1;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+CV-Werte;;;;;;;;;;;;;;;;;;;;;;;;;
+ZeilenIndex;SpaltenIndex;Well;ID;Name;CV-Wert 1;CV-Wert 2;CV-Wert 3;CV-Wert 4;CV-Wert 5;CV-Wert 6;CV-Wert 7;CV-Wert 8;CV-Wert 9;CV-Wert 10;CV-Wert 11;CV-Wert 12;CV-Wert 13;CV-Wert 14;CV-Wert 15;;;;;;
+0;0;Slide1_A1;;;;49,03723412;57,25912619;;;;17,11027516;23,96834521;35,9342024;;;;;;;;;;;;
+1;0;Slide2_A1;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+Wellinformationen;;;;;;;;;;;;;;;;;;;;;;;;;
+ZeilenIndex;SpaltenIndex;Well;ID;Name;Vorname;Geburtstag;Geschlecht;ModulName;ModulKonfiguration;Einzelergebnisanzahl;Ergebnisname 1;Ergebnisname 2;Ergebnisname 3;Ergebnisname 4;Ergebnisname 5;Ergebnisname 6;Ergebnisname 7;Ergebnisname 8;Ergebnisname 9;Ergebnisname 10;Ergebnisname 11;Ergebnisname 12;Ergebnisname 13;Ergebnisname 14;Ergebnisname 15
+0;0;Slide1_A1;#00000001;Ross;Stefan;1993-08-01;male;WideRangeDRLDBeadMeasurementTestDll.dll;FDinter_4x_C0424-C0435_FlexFlowChip.ffstc;15;Wert von C0424;Wert von C0425;Wert von C0426;Wert von C0427;Wert von C0428;Wert von C0429;Wert von C0430;Wert von C0431;Wert von C0432;Wert von C0433;Wert von C0434;Wert von C0435;Beadanzahl;Ergebnisdatei;Rohdatendatei
+1;0;Slide2_A1;;;;;;WideRangeDRLDBeadMeasurementTestDll.dll;FDinter_4x_C0424-C0435_FlexFlowChip.ffstc;0;;;;;;;;;;;;;;;

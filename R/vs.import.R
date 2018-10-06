@@ -22,6 +22,9 @@ vs.import <- function(file) {
   file.readLines <- readLines(file)
 
   res.md5sum <- tools::md5sum(file)
+  
+  res.date <- as.Date(strsplit(gsub('"', "", file.readLines[3]), ";")[[1]][2])
+  res.time <- strsplit(gsub('"', "", file.readLines[3]), ";")[[1]][3]
 
   # Split all data blocks by the semicolons.
   res.readLine <- strsplit(file.readLines, ";")
@@ -84,6 +87,8 @@ vs.import <- function(file) {
     forename = rep(patient.information[3], number.of.targets),
     birthday = rep(patient.information[4], number.of.targets),
     sex = rep(patient.information[5], number.of.targets),
+    examination.date = rep(res.date, number.of.targets),
+    examination.time = rep(res.time, number.of.targets),
     target.names,
     res.data.tmp[-c(1:5, (end.targets[2] - 8):end.targets[2]), ],
     rep(profile.name, number.of.targets),
@@ -99,6 +104,8 @@ vs.import <- function(file) {
     "Forename",
     "Birthday",
     "Sex",
+    "Examination date",
+    "Examination time",
     "Biomarker",
     "Value", "Standard deviation", "Events",
     "Profile",

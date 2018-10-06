@@ -4,6 +4,7 @@
 
 library(shiny)
 library(digilogger)
+library(knitr)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(

@@ -1,3 +1,3 @@
 # About
 
-Der **Raw data**-Reiter enthält
+Der **Raw data**-Reiter beinhaltet eine interaktive     
