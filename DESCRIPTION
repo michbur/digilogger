@@ -21,7 +21,8 @@ Imports:
     stats,
     utils
 Suggests:
-    knitr
+    knitr,
+    pander
 NeedsCompilation: no
 VignetteBuilder: knitr
 Encoding: UTF-8

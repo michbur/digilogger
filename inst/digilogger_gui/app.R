@@ -29,7 +29,7 @@ ui <- fluidPage(
         shiny::tabPanel("Plot",
                          plotOutput('mplot')),
        shiny::tabPanel("Session information",
-                       textOutput('sessioninformation')),
+                       uiOutput('sessioninformation')),
        shiny::tabPanel("About",
                        includeMarkdown("about.md"))
      )
@@ -63,8 +63,8 @@ server <- function(input, output) {
     mplot()
   })
   
-  output$sessioninformation <- renderPrint({
-    sessionInfo()
+  output$sessioninformation <- renderUI({
+    HTML(knit2html(text = capture.output(pander::pander(sessionInfo())), fragment.only = TRUE))
   })
 }
 
