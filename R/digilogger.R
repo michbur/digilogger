@@ -6,7 +6,6 @@
 #' Some text.
 #'
 #' @importFrom graphics plot
-#' @importFrom reshape2 melt
 #' @importFrom stats rnorm
 #' @importFrom tools md5sum
 #' @importFrom utils tail
@@ -15,7 +14,7 @@
 #' @name digilogger-package
 #' @aliases digilogger
 #' @examples
-#' # Use the NEW function to analyse amplification curves
+#' # Use the NEW function to analyse data
 #' tail(1:100)
 
 

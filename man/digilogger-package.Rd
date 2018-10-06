@@ -14,7 +14,7 @@ Some text.
 }
 
 \examples{
-# Use the NEW function to analyse amplification curves
+# Use the NEW function to analyse data
 tail(1:100)
 }
 \author{

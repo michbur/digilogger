@@ -11,7 +11,7 @@
 #' @examples
 #'
 #' # Import a csv file from the VideoScan systems
-#' file <- "/home/tux/Work/paper/digilogger/Projekt009383-19-09-2018_FranziD_Chip119_CRP_50_nI_Block.csv"
+#' file <- "/home/tux/Work/paper/digilogger/inst/Projekt009383-19-09-2018_FranziD_Chip119_CRP_50_nI_Block.csv"
 #' vs.import(file)
 #'
 #' @export
@@ -108,7 +108,7 @@ vs.import <- function(file) {
   )
 
   # Change pseudo Zero to NA
-  res.data[res.data[, "events"] == 0, "standard deviation"] <- NA
+  res.data[res.data[, "Events"] == 0, "standard deviation"] <- NA
 
   res.data
 }

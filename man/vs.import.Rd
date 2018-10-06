@@ -19,12 +19,12 @@ The \code{\link[utils]{read.csv}} is used internally.
 \examples{
 
 # Import a csv file from the VideoScan systems
-file <- "/home/tux/Work/paper/digilogger/Projekt009383-19-09-2018_FranziD_Chip119_CRP_50_nI_Block.csv"
+file <- "/home/tux/Work/paper/digilogger/inst/Projekt009383-19-09-2018_FranziD_Chip119_CRP_50_nI_Block.csv"
 vs.import(file)
 
 }
 \author{
-Stefan Roediger
+Stefan Roediger, Michal Burdukiewicz
 }
 \keyword{data}
 \keyword{import}
