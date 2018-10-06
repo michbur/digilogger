@@ -10,5 +10,5 @@ After processing, the raw data are qualitatively checked and presented with inte
 
 ### Readme
 
-1. *Choose CSV File* - is a csv file containing the raw data from the POCT device.  
+1. *Choose CSV File(s)* - Accepts csv file(s) containing the raw data from the POCT device.  
 2. Go through the tabs to analyze and visualize the data.  
