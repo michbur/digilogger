@@ -26,15 +26,33 @@ server <- function(input, output) {
   })
   
   # Generate a table of the dataset
-  output$filetable <- renderDataTable({
+  output[["filetable"]] <- renderDataTable({
+    my_DT(filedata())
+  })
+  
+  output[["sessioninformation"]] <- renderUI({
+    HTML(knit2html(text = capture.output(pander::pander(sessionInfo())), fragment.only = TRUE))
+  })
+  
+  output[["dynamic_tabset"]] <- renderUI({
     if(is.null(filedata())) {
-      NULL
+      tabsetPanel(
+        tabPanel("About",
+                 includeMarkdown("about.md")),
+        tabPanel("Session information",
+                 uiOutput('sessioninformation'))
+      )
     } else {
-      my_DT(filedata())
+      tabsetPanel(
+        tabPanel("Raw Data",
+                 dataTableOutput('filetable'),
+                 includeMarkdown("raw_data_readme.md")),
+        tabPanel("About",
+                 includeMarkdown("about.md")),
+        tabPanel("Session information",
+                 uiOutput('sessioninformation'))
+      )
     }
   })
   
-  output$sessioninformation <- renderUI({
-    HTML(knit2html(text = capture.output(pander::pander(sessionInfo())), fragment.only = TRUE))
-  })
 }

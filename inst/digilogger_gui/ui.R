@@ -18,15 +18,7 @@ ui <- fluidPage(
       tags[["p"]](HTML("<h3><A HREF=\"javascript:history.go(0)\">Start a new analysis</A></h3>"))
     ),
     mainPanel(
-      shiny::tabsetPanel(
-        shiny::tabPanel("Raw Data",
-                        dataTableOutput('filetable'),
-                        includeMarkdown("raw_data_readme.md")),
-        shiny::tabPanel("Session information",
-                        uiOutput('sessioninformation')),
-        shiny::tabPanel("About",
-                        includeMarkdown("about.md"))
-      )
+      uiOutput("dynamic_tabset")
     )
   )
 )
