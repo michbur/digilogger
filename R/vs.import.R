@@ -115,7 +115,7 @@ vs.import <- function(file) {
   )
 
   # Change pseudo Zero to NA
-  res.data[res.data[, "Events"] == 0, "standard deviation"] <- NA
+  res.data[res.data[, "Events"] == 0, "Standard deviation"] <- NA
 
   res.data
 }
