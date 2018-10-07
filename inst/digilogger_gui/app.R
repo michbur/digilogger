@@ -27,6 +27,11 @@ ui <- fluidPage(
                          includeMarkdown("raw_data_readme.md")),
         shiny::tabPanel("summary",
                          tableOutput('summary')),
+        shiny::tabPanel("Files",
+                        dataTableOutput('files'),
+                        includeMarkdown("files.md")),
+        shiny::tabPanel("Duplicates",
+                        dataTableOutput('duplicates')),
         shiny::tabPanel("Plot",
                          plotOutput('mplot')),
        shiny::tabPanel("Session information",
@@ -44,7 +49,7 @@ server <- function(input, output) {
   filedata <- reactive({
     inFile <- input$datafile
     if(is.null(inFile)) {
-      # User has not uploaded a file yet
+      # User has not uploaded a file(s) yet
       NULL
     } else {
       do.call(rbind, lapply(input$datafile$datapath, vs.import))
@@ -53,11 +58,54 @@ server <- function(input, output) {
   
   # Generate a table of the dataset
   output$filetable <- renderDataTable({
-    filedata()
+    filedata()[, c("ID", 
+             "Name",
+             "Forename", 
+             "Birthday", 
+             "Sex", 
+             "Examination date", 
+             "Examination time", 
+             "Biomarker", 
+             "Value", 
+             "Standard deviation", 
+             "Events"
+             )]
   })
   
   output$summary <- renderTable({
     summary(filedata())
+  })
+  
+  output$files <- renderDataTable({
+    filedata()[, c("ID", 
+             "Name",
+             "Forename", 
+             "Birthday", 
+             "Sex", 
+             "Examination date", 
+             "Examination time", 
+             "Profile",
+             "Project", 
+             "LOT", 
+             "md5sum",
+             "File")]
+  })
+  
+  output$duplicates <-renderDataTable({
+    dat <-filedata()
+    df <- data.frame(ID = dat$ID, Project = dat$Project, md5sum = dat$md5sum, File = dat$File)
+    unique.files <- unique(df$File)
+    
+    res.files <- do.call(rbind, lapply(1:length(unique.files), function(i){
+      index <- df$File == unique.files[i]
+      unique.md5sum <- unique(df[index, "md5sum"])
+      data.frame(File = unique.files[i], md5sum = unique.md5sum)
+    }))
+    
+    res.files <- data.frame(res.files, 
+                            Unique = as.character(ifelse(summary(res.files$md5sum) == 1, 
+                                                         "True", "potential dublication")))
+    res.files
   })
   
   output$mplot <- renderPlot({

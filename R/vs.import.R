@@ -94,7 +94,8 @@ vs.import <- function(file) {
     rep(profile.name, number.of.targets),
     rep(project.name, number.of.targets),
     LOT = rep(LOT[1], number.of.targets),
-    md5sum = rep(res.md5sum, number.of.targets)[[1]]
+    md5sum = rep(res.md5sum, number.of.targets)[[1]],
+    File = file
   )
 
   # Give all columns English names
@@ -111,11 +112,12 @@ vs.import <- function(file) {
     "Profile",
     "Project",
     "LOT",
-    "md5sum"
+    "md5sum", 
+    "File"
   )
 
   # Change pseudo Zero to NA
-  res.data[res.data[, "Events"] == 0, "standard deviation"] <- NA
+  res.data[res.data[, "Events"] == 0, "Standard deviation"] <- NA
 
   res.data
 }
