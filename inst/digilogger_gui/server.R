@@ -16,12 +16,16 @@ my_DT <- function(x)
 server <- function(input, output) {
   
   filedata <- reactive({
-    inFile <- input$datafile
-    if(is.null(inFile)) {
+    if(is.null(input[["datafile"]])) {
       # User has not uploaded a file yet
       NULL
     } else {
-      do.call(rbind, lapply(input[["datafile"]][["datapath"]], vs.import))
+      dat <- lapply(input[["datafile"]][["datapath"]], vs.import)
+      
+      # find unique md5 sums
+      unique_files <- !duplicated(sapply(dat, function(i) as.character(unique(i[["md5sum"]]))))
+      
+      do.call(rbind, dat[unique_files])
     }
   })
   
