@@ -14,17 +14,14 @@ ui <- fluidPage(
       fileInput('datafile', 'Choose CSV File',
                 accept=c('text/csv', 'text/comma-separated-values,text/plain', '.csv'),
                 multiple = TRUE),
-      includeMarkdown("readme.md")
+      includeMarkdown("readme.md"),
+      tags[["p"]](HTML("<h3><A HREF=\"javascript:history.go(0)\">Start a new analysis</A></h3>"))
     ),
     mainPanel(
       shiny::tabsetPanel(
         shiny::tabPanel("Raw Data",
                         dataTableOutput('filetable'),
                         includeMarkdown("raw_data_readme.md")),
-        shiny::tabPanel("summary",
-                        tableOutput('summary')),
-        shiny::tabPanel("Plot",
-                        plotOutput('mplot')),
         shiny::tabPanel("Session information",
                         uiOutput('sessioninformation')),
         shiny::tabPanel("About",
