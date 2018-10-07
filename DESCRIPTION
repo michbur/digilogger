@@ -21,6 +21,8 @@ Imports:
     stats,
     utils
 Suggests:
+    dplyr,
+    ggplot2,
     knitr,
     pander
 NeedsCompilation: no

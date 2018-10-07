@@ -2,6 +2,8 @@ library(shiny)
 library(digilogger)
 library(knitr)
 library(DT)
+library(dplyr)
+library(ggplot2)
 
 options(shiny.maxRequestSize=10*1024^2)
 
@@ -11,7 +13,8 @@ options(DT.options = list(dom = "Brtip",
 ))
 
 my_DT <- function(x)
-  formatStyle(datatable(x, escape = FALSE, extensions = "Buttons", filter = "top", rownames = FALSE), 1L:ncol(x), color = "black")
+  datatable(x, escape = FALSE, extensions = "Buttons", filter = "top", rownames = FALSE) %>% 
+  formatStyle(1L:ncol(x), color = "black")
 
 server <- function(input, output) {
   
@@ -34,8 +37,18 @@ server <- function(input, output) {
     my_DT(filedata())
   })
   
+  output[["timeplot"]] <- renderPlot({
+    ggplot(filedata(), aes(x = `Examination date`, y = Value, color = ID)) +
+      geom_point() +
+      geom_line() +
+      theme_bw(base_size = 15) +
+      theme(legend.position = "bottom")
+  })
+  
   output[["sessioninformation"]] <- renderUI({
-    HTML(knit2html(text = capture.output(pander::pander(sessionInfo())), fragment.only = TRUE))
+    capture.output(pander::pander(sessionInfo())) %>% 
+      knit2html(text = ., fragment.only = TRUE) %>% 
+      HTML()
   })
   
   output[["dynamic_tabset"]] <- renderUI({
@@ -51,6 +64,8 @@ server <- function(input, output) {
         tabPanel("Raw Data",
                  dataTableOutput('filetable'),
                  includeMarkdown("raw_data_readme.md")),
+        tabPanel("Patient chart",
+                 plotOutput("timeplot")),
         tabPanel("About",
                  includeMarkdown("about.md")),
         tabPanel("Session information",
