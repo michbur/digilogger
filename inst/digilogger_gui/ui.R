@@ -5,6 +5,8 @@ library(DT)
 # Define UI for application that draws a histogram
 ui <- fluidPage(
   
+  theme = shinythemes::shinytheme("spacelab"),
+  
   # Application title
   titlePanel("digilogger"),
   

@@ -24,7 +24,8 @@ Suggests:
     dplyr,
     ggplot2,
     knitr,
-    pander
+    pander,
+    shinythemes
 NeedsCompilation: no
 VignetteBuilder: knitr
 Encoding: UTF-8
