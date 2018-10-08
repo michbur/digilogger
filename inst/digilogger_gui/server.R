@@ -90,7 +90,30 @@ server <- function(input, output) {
         tabPanel("About",
                  includeMarkdown("about.md")),
         tabPanel("Session information",
-                 uiOutput('sessioninformation'))
+                 uiOutput('sessioninformation')),
+        tabPanel("Technology",
+                 h1("VideoScan"),
+                 h2("VideoScan"),
+                 tags$article('Microfluidic chips
+                 (flex.flow, bi.FLOW GmbH) were prepared by microbead immobilization
+                 on an adhesive tape in flow cell and also by filling reagent
+                 reservoirs with relevant assay components. During assay the
+                 components are pumped through capillaries. After incubation and
+                 washing steps the microbeads in the flow cell were measured using the
+                 VideoScan technology. The surface fluorescence intensity is reported
+                 as referenced mean fluorescence intensity (refMFI).'),
+                 tags$img(src='vs.png', height=500, width=800),
+                 h2("Multiplex assay"),
+                 tags$article('a-c represents the scheme of combined assay performance. 
+                              All microbead population expose the expected results from 
+                              single assays. There is an increase of fluorescence signal 
+                              of CO424 and CO425 0 to 2.3 (hybridization assay - EUB338), 
+                              a decrease of fluorescence signal of CO426 and CO427 1.6 to 
+                              1.0 (hybridization assay – Vimentin-BHQ2), no change of 
+                              fluorescence signal for CO428 and CO429 0 to 0 (negative 
+                              control) and also an increase of fluorescence 
+                              signal for CO430 to CO431 0 to 3.0 (ELISA – CRP).'),
+                 tags$img(src='data.png', height=500, width=800))
       )
     } else {
       tabsetPanel(
