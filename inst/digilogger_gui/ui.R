@@ -13,6 +13,7 @@ ui <- fluidPage(
   pageWithSidebar(
     headerPanel("Data"),
     sidebarPanel(
+      tags$img(src='logo.png', height=300, width=500),
       fileInput('datafile', 'Choose CSV File',
                 accept=c('text/csv', 'text/comma-separated-values,text/plain', '.csv'),
                 multiple = TRUE),
