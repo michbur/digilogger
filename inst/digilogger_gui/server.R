@@ -4,6 +4,7 @@ library(knitr)
 library(DT)
 library(dplyr)
 library(ggplot2)
+library(plotly)
 
 options(shiny.maxRequestSize=10*1024^2)
 
@@ -15,6 +16,8 @@ options(DT.options = list(dom = "Brtip",
 my_DT <- function(x)
   datatable(x, escape = FALSE, extensions = "Buttons", filter = "top", rownames = FALSE) %>% 
   formatStyle(1L:ncol(x), color = "black")
+
+Sys.setlocale("LC_TIME", "C")
 
 server <- function(input, output) {
   
@@ -42,15 +45,52 @@ server <- function(input, output) {
     my_DT(filedata())
   })
   
-  output[["timeplot"]] <- renderPlot({
-    ggplot(filedata(), aes(x = `Examination date`, y = Value, color = Biomarker)) +
+  output[["timeplot"]] <- renderPlotly({
+    (ggplot(filedata(), aes(x = `Examination date`, y = Value, color = Biomarker)) +
+       geom_point() +
+       geom_line() +
+       theme_bw(base_size = 15) +
+       theme(legend.position = "bottom") +
+       facet_wrap(~ ID, ncol = 1)) %>% 
+      ggplotly()
+  })
+  
+  coord <- reactiveValues(x = NULL, y = NULL)
+  
+  observeEvent(input[["plot_click"]], { 
+    coord[["y"]] <- input[["plot_click"]][["y"]]
+    coord[["x"]] <- input[["plot_click"]][["x"]]
+  })
+  
+  
+  output[["assessment_plot"]] <- renderPlot({
+    p <- filter(filedata(), Biomarker == input[["selected_biomarker"]])  %>% 
+      ggplot(aes(x = `Examination date`, y = Value, color = ID)) +
       geom_point() +
       geom_line() +
       theme_bw(base_size = 15) +
-      theme(legend.position = "bottom") +
-      facet_wrap(~ ID, ncol = 1)
+      theme(legend.position = "bottom") 
+
+    if(!is.null(coord[["y"]]))  
+      p <- p + geom_hline(yintercept = coord[["y"]])
+    
+    p
   })
   
+  output[["assessment_dt"]] <- renderDataTable({
+
+    ass_dt <- filter(filedata(), Biomarker == input[["selected_biomarker"]]) %>% 
+      group_by(ID) %>% 
+      filter(`Examination date` == max(`Examination date`)) %>% 
+      filter(Value == max(Value)) %>% 
+      select(ID, Name, Forename, Value) 
+    
+    if(!is.null(coord[["y"]]))  
+      ass_dt <- mutate(ass_dt, Assessment = ifelse(Value > coord[["y"]], "sick", "healthy"))
+    
+    ass_dt
+  })
+
   output[["sessioninformation"]] <- renderUI({
     capture.output(pander::pander(sessionInfo())) %>% 
       knit2html(text = ., fragment.only = TRUE) %>% 
@@ -98,7 +138,14 @@ server <- function(input, output) {
                  dataTableOutput('filetable'),
                  includeMarkdown("raw_data_readme.md")),
         tabPanel("Patient chart",
-                 plotOutput("timeplot", height = 130 + 150*nlevels(filedata()[["ID"]]))),
+                 plotlyOutput("timeplot", height = 160 + 190*nlevels(filedata()[["ID"]]))),
+        tabPanel("Assessment chart",
+                 selectInput("selected_biomarker", 
+                             label = "Select a biomarker:", 
+                             choices = levels(filedata()[["Biomarker"]]), 
+                             selected = "Wert von C0430"),
+                 plotOutput("assessment_plot", click = "plot_click"),
+                 dataTableOutput("assessment_dt")),
         tabPanel("Files",
                  uiOutput("duplicated_files"),
                  dataTableOutput('files'),
