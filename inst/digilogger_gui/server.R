@@ -51,6 +51,21 @@ server <- function(input, output) {
       HTML()
   })
   
+  output[["files"]] <- renderDataTable({
+    filedata()[, c("ID", 
+                   "Name",
+                   "Forename", 
+                   "Birthday", 
+                   "Sex", 
+                   "Examination date", 
+                   "Examination time", 
+                   "Profile",
+                   "Project", 
+                   "LOT", 
+                   "md5sum",
+                   "File")]
+  })
+  
   output[["dynamic_tabset"]] <- renderUI({
     if(is.null(filedata())) {
       tabsetPanel(
@@ -66,7 +81,10 @@ server <- function(input, output) {
                  includeMarkdown("raw_data_readme.md")),
         tabPanel("Patient chart",
                  plotOutput("timeplot")),
-        tabPanel("About",
+        tabPanel("Files",
+                 dataTableOutput('files'),
+                 includeMarkdown("files.md")),
+        tabPanel("About digilogger",
                  includeMarkdown("about.md")),
         tabPanel("Session information",
                  uiOutput('sessioninformation'))
