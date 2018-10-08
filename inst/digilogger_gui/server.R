@@ -26,9 +26,14 @@ server <- function(input, output) {
       dat <- lapply(input[["datafile"]][["datapath"]], vs.import)
       
       # find unique md5 sums
-      unique_files <- !duplicated(sapply(dat, function(i) as.character(unique(i[["md5sum"]]))))
+      duplicates <- duplicated(sapply(dat, function(i) as.character(unique(i[["md5sum"]]))))
       
-      do.call(rbind, dat[unique_files])
+      res <- do.call(rbind, dat[!duplicates])
+      
+      attr(res, "duplicates") <- duplicates
+      names(attr(res, "duplicates")) <- input[["datafile"]][["name"]]
+      
+      res
     }
   })
   
@@ -38,11 +43,12 @@ server <- function(input, output) {
   })
   
   output[["timeplot"]] <- renderPlot({
-    ggplot(filedata(), aes(x = `Examination date`, y = Value, color = ID)) +
+    ggplot(filedata(), aes(x = `Examination date`, y = Value, color = Biomarker)) +
       geom_point() +
       geom_line() +
       theme_bw(base_size = 15) +
-      theme(legend.position = "bottom")
+      theme(legend.position = "bottom") +
+      facet_wrap(~ ID, ncol = 1)
   })
   
   output[["sessioninformation"]] <- renderUI({
@@ -66,6 +72,18 @@ server <- function(input, output) {
                    "File")]
   })
   
+  output[["duplicated_files"]] <- renderUI({
+    file_text <- if(any(attr(filedata(), "duplicates"))) {
+      strong(paste0("Detected duplicated files: ", paste0(names(which(attr(filedata(), "duplicates"))), collapse = ", "), 
+                    ". File(s) removed from the further analysis."))
+    } else {
+      p("No duplicated files detected.")
+    }
+    
+    p(file_text)
+  })
+  
+  
   output[["dynamic_tabset"]] <- renderUI({
     if(is.null(filedata())) {
       tabsetPanel(
@@ -80,8 +98,9 @@ server <- function(input, output) {
                  dataTableOutput('filetable'),
                  includeMarkdown("raw_data_readme.md")),
         tabPanel("Patient chart",
-                 plotOutput("timeplot")),
+                 plotOutput("timeplot", height = 130 + 150*nlevels(filedata()[["ID"]]))),
         tabPanel("Files",
+                 uiOutput("duplicated_files"),
                  dataTableOutput('files'),
                  includeMarkdown("files.md")),
         tabPanel("About digilogger",
