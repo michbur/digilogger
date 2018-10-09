@@ -8,10 +8,10 @@ ui <- fluidPage(
   theme = shinythemes::shinytheme("spacelab"),
   
   # Application title
-  titlePanel("digilogger"),
+  titlePanel(""),
   
   pageWithSidebar(
-    headerPanel("Data"),
+    headerPanel(""),
     sidebarPanel(
       tags$img(src='logo.png', height=300, width=500),
       fileInput('datafile', 'Choose CSV File',

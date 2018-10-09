@@ -43,5 +43,5 @@ ZeilenIndex;SpaltenIndex;Well;ID;Name;CV-Wert 1;CV-Wert 2;CV-Wert 3;CV-Wert 4;CV
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 Wellinformationen;;;;;;;;;;;;;;;;;;;;;;;;;
 ZeilenIndex;SpaltenIndex;Well;ID;Name;Vorname;Geburtstag;Geschlecht;ModulName;ModulKonfiguration;Einzelergebnisanzahl;Ergebnisname 1;Ergebnisname 2;Ergebnisname 3;Ergebnisname 4;Ergebnisname 5;Ergebnisname 6;Ergebnisname 7;Ergebnisname 8;Ergebnisname 9;Ergebnisname 10;Ergebnisname 11;Ergebnisname 12;Ergebnisname 13;Ergebnisname 14;Ergebnisname 15
-0;0;Slide1_A1;#00000003;Doe;Jane;1941-05-03;female;WideRangeDRLDBeadMeasurementTestDll.dll;FDinter_4x_C0424-C0435_FlexFlowChip.ffstc;15;Wert von C0424;Wert von C0425;Wert von C0426;Wert von C0427;Wert von C0428;Wert von C0429;Wert von C0430;Wert von C0431;Wert von C0432;Wert von C0433;Wert von C0434;Wert von C0435;Beadanzahl;Ergebnisdatei;Rohdatendatei
+0;0;Slide1_A1;#00000003;Doe;Jane;1941-05-03;female;WideRangeDRLDBeadMeasurementTestDll.dll;FDinter_4x_C0424-C0435_FlexFlowChip.ffstc;15;Wert von C0424;cfmDNA;DNA (interne Positivkontrolle);Wert von C0427;Wert von C0428;Wert von C0429;CRP;BNP;Streptavidin (PK);Wert von C0433;Wert von C0434;Wert von C0435;Beadanzahl;Ergebnisdatei;Rohdatendatei
 1;0;Slide2_A1;;;;;;WideRangeDRLDBeadMeasurementTestDll.dll;FDinter_4x_C0424-C0435_FlexFlowChip.ffstc;0;;;;;;;;;;;;;;;

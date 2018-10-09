@@ -83,10 +83,10 @@ server <- function(input, output) {
       group_by(ID) %>% 
       filter(`Examination date` == max(`Examination date`)) %>% 
       filter(Value == max(Value)) %>% 
-      select(ID, Name, Forename, Value) 
+      select(ID, Name, Forename, Value, 'Standard deviation') 
     
     if(!is.null(coord[["y"]]))  
-      ass_dt <- mutate(ass_dt, Assessment = ifelse(Value > coord[["y"]], "sick", "healthy"))
+      ass_dt <- mutate(ass_dt, Assessment = ifelse(Value > coord[["y"]], "diseased", "normal"))
     
     ass_dt
   })
@@ -131,9 +131,11 @@ server <- function(input, output) {
                  includeMarkdown("about.md")),
         tabPanel("Session information",
                  uiOutput('sessioninformation')),
-        tabPanel("Technology",
+        tabPanel("Technical Concept",
+                 includeMarkdown("concept.md"),
+                 tags$img(src='concept.png', height=500, width=800)),
+        tabPanel("Measurement Technology",
                  h1("VideoScan"),
-                 h2("VideoScan"),
                  tags$article('In our laboratory a microfluidic microbead chip system 
                  for VideoScan technology was adopted. Eight carboxylated microbeads, 
                  differing in size and fluorescence, were coated with targets like unconjugated 
@@ -152,7 +154,7 @@ server <- function(input, output) {
                  VideoScan technology. The surface fluorescence intensity is reported
                  as referenced mean fluorescence intensity (refMFI).'),
                  tags$img(src='vs.png', height=500, width=800),
-                 h2("Multiplex assay"),
+                 h1("Multiplex assay"),
                  tags$article('5a-c represents the scheme of combined assay performance. 
                               All microbead population expose the expected results from 
                               single assays. There is an increase of fluorescence signal 
@@ -160,7 +162,7 @@ server <- function(input, output) {
                               a decrease of fluorescence signal of CO426 and CO427 1.6 to 
                               1.0 (hybridization assay – Vimentin-BHQ2), no change of 
                               fluorescence signal for CO428 and CO429 0 to 0 (negative 
-                              control) and also an increase of fluorescence 
+                              control) and also an increase of fluorescence   
                               signal for CO430 to CO431 0 to 3.0 (ELISA – CRP).'),
                  tags$img(src='data.png', height=500, width=800))
       )
