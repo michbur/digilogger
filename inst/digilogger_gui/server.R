@@ -177,7 +177,7 @@ server <- function(input, output) {
                  selectInput("selected_biomarker", 
                              label = "Select a biomarker:", 
                              choices = levels(filedata()[["Biomarker"]]), 
-                             selected = "Wert von C0430"),
+                             selected = levels(filedata()[["Biomarker"]])[1]),
                  plotOutput("assessment_plot", click = "plot_click"),
                  dataTableOutput("assessment_dt")),
         tabPanel("Files",
