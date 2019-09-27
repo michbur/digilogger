@@ -21,4 +21,4 @@ devtools::install_github("michbur/digilogger")
 
 # digilogger - standalone graphical user interface
 
-Our digilogger standalone graphical user interface allows the analysis of dPCR data without installing the package. Since the *digilogger* software is based on modern web technologies like HTML5 it will run on any modern web browser. Additionally, the software works when run in [RStudio](https://rstudio.com/products/rstudio/) or [RKWard](https://rkward.kde.org/) (version 0.7.0z+0.7.1+devel1). The *digilogger* software works platform independent (tested on Linux and Windows). 
+Our digilogger standalone graphical user interface allows the analysis of dPCR data without installing the package on a server. Since the *digilogger* software is based on modern web technologies like HTML5 it will run on any modern web browser. Additionally, the software works when run in [RStudio](https://rstudio.com/products/rstudio/) or [RKWard](https://rkward.kde.org/) (version 0.7.0z+0.7.1+devel1). The *digilogger* software works platform independent (tested on Linux and Windows). 
