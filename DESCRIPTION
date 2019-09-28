@@ -11,7 +11,7 @@ Authors@R: c(person("Stefan", "Roediger",
              email = "michalburdukiewicz@gmail.com", 
              comment = c(ORCID = "0000-0001-8926-582X"),
              role = c("aut")))
-Description: Interactive summaries of POCT data as produced by the FastFluoScan software on the VideoScan platform (10.7490/f1000research.1115161.1.). Streamlines multiparameter comparisions over multiple patients and multiple biomarkers.
+Description:This software can be used in combination with point-of-care-testing (POCT) devices. In addition to the implementation of an exemplary import function, the software has an interactive user interface. The user interface is based on the shiny technology (doi:10.7490/f1000research.1115161.1.). Interactive summaries of POCT data as produced by the FastFluoScan software on the VideoScan platform (doi:10.1007/10_2011_132). Streamlines multiparameter comparisons over multiple patients and multiple biomarkers.
 License: MIT + file LICENSE
 LazyLoad: yes
 LazyData: yes
