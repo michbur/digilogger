@@ -11,9 +11,10 @@
 #' @section The scope of digilogger  
 #' Biomarkers for cardiovascular diseases include hs-CRP, BNP, LDL, HbA1c, ST2 and creatinine.
 #' We started to integrated them in a microfluidic microbead chip system that is read-out with our 
-#' VideoScan technology as proposed earlier. In addition, we develop a software which can be used for 
-#' the analysis. We integrated the biomarkers in different detection methods (hybridization assays, ELISA, 
-#' microbead ELISA) and tested those methods as multiplex assays.
+#' VideoScan technology (doi:10.1007/10_2011_132) as demonstrated earlier. In addition, 
+#' we develop a software which can be used for the analysis. We integrated the biomarkers in 
+#' different detection methods (hybridization assays, ELISA, microbead ELISA) and tested those 
+#' methods as multiplex assays.
 #'
 #' @importFrom graphics plot
 #' @importFrom stats rnorm
