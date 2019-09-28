@@ -1,4 +1,5 @@
-![digilogger](https://github.com/michbur/digilogger/tree/master/inst/digilogger_gui/www/logo.png)
+<img src="https://github.com/michbur/digilogger/blob/master/inst/digilogger_gui/www/logo.png" alt="digilogger" style="height: 200px;"/>
+
 ====
 Analysis, visualisation and simulation of POCT experiments.
 

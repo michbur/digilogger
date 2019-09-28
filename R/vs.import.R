@@ -11,8 +11,8 @@
 #' @examples
 #'
 #' # Import a csv file from the VideoScan systems
-#' file <- "/home/tux/Work/paper/digilogger/inst/Projekt009383-19-09-2018_FranziD_Chip119_CRP_50_nI_Block.csv"
-#' vs.import(file)
+#' file_name <- "Projekt009383-19-09-2018_FranziD_Chip119_CRP_50_nI_Block.csv"
+#' vs.import(system.file(file_name, package = "digilogger"))
 #'
 #' @export
 

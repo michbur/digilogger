@@ -6,16 +6,7 @@
 \alias{digilogger}
 \title{digilogger - data analysis tools}
 \description{
-\code{digilogger} package is a toolbox for the analysis of data.
-}
-\section{Data analysis}{
-
-Some text.
-}
-
-\examples{
-# Use the NEW function to analyse data
-tail(1:100)
+\code{digilogger} package is a toolbox for the analysis of POCT data.
 }
 \author{
 Stefan Roediger

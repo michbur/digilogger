@@ -11,7 +11,7 @@ Authors@R: c(person("Stefan", "Roediger",
              email = "michalburdukiewicz@gmail.com", 
              comment = c(ORCID = "0000-0001-8926-582X"),
              role = c("aut")))
-Description: Some text should be here. Some more would be better.
+Description: Interactive summaries of POCT data as produced by the FastFluoScan software on the VideoScan platform (10.7490/f1000research.1115161.1.). Streamlines multiparameter comparisions over multiple patients and multiple biomarkers.
 License: MIT + file LICENSE
 LazyLoad: yes
 LazyData: yes
@@ -23,6 +23,7 @@ Imports:
     utils
 Suggests:
     dplyr,
+    DT,
     ggplot2,
     knitr,
     pander,
