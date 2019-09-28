@@ -8,15 +8,17 @@ Analysis, visualisation and simulation of POCT experiments.
 
 # Requirements
 
-The *digilogger* software requires a functional R environment (verion 3.5 or later) and a working 
-installation of the *shiny* package.
+You can install the latest development version of the package:
 
 ```R
-# Start R
-# Install devtools, if you haven't already.
-install.packages("devtools")
+source("https://install-github.me/michbur/digilogger")
+```
 
-devtools::install_github("michbur/digilogger")
+After installation GUI can be accessed locally:
+
+```R
+library(digilogger)
+digilogger_gui()
 ```
 
 # digilogger - standalone graphical user interface
