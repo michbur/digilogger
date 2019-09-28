@@ -1,4 +1,4 @@
-<img src="https://github.com/michbur/digilogger/blob/master/inst/digilogger_gui/www/logo.png" alt="digilogger" style="height: 200px;"/>
+<img src="https://github.com/michbur/digilogger/blob/master/inst/digilogger_gui/www/logo.png" alt="digilogger" style="height: 50px;"/>
 
 
 ### Analysis, visualisation and simulation of POCT experiments.
