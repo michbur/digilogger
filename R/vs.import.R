@@ -2,7 +2,8 @@
 #'
 #' vs.import() is a function to import a file from the VideoScan system.
 #' The \code{\link[utils]{read.csv}} is used internally with some enriched
-#' functionality to match the structure of the raw data output.
+#' functionality to match the structure of the raw data output from the
+#' VideoScan system.
 #'
 #' @param file is the file that contains.
 #' @return The output of the vs.import() function is a data.frame
